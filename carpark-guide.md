@@ -386,11 +386,11 @@ For example, you may want to see the number of available bays, the current tempe
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
->
+> CarPark, because it should hold the information what parking spaces are available
 >Q. Which class is responsible for the current temperature (and why)?
->
+> Sensor, because the temperature needs a consistent input from a temperature sensor
 >Q. Which class is responsible for the time (and why)?
->
+> Display, because the time is a continuously displayyed piece of information that doesn't require an external sensor
 --------
 
 ##### 2.7.3.1. Detour: implement available bays
@@ -463,26 +463,26 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+
+![Added methods to the car park class](screenshots/github_carpark_methods.png)
+
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - *The number of available bays*
->      `Answer here...`
+>      `Carpark, because this is where the available_bays method returns the capacity minus the length of the plates, or 0 if they exceed capacity
 >    - *The current temperature*
->      `Answer here...`
+>      `Display, because temperature is a displayed value that would inherit information from Sensor
 >    - *The time*
->      `Answer here...`
+>      `Display, because the time is not dependant on Carpark or Sensor for its information
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `An attribute is an objects stored data, which does not require calculation or logic, whereas a property acts like a method disguised as an attribute; it performs some kind of calculation int he background but is accessed like it is an attribute
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `An advantage of using a dictionary is that it lets us bundle different pieces of data (available bays, temperature, etc.) under clear keys, making it easy for the display to access each value by name. A disadvantage would be that the display must already know what keys to expect; if the keys change or are misspelled, the system breaks.
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 

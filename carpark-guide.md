@@ -122,9 +122,9 @@ Ensure you have completed the previous table and include at least two methods an
 **Additional evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-```markdown
-![Added stubs for classes](screenshots/stubs-for-classes.png)
-```
+
+![Added stubs for classes](screenshots/github_after_class_stubs.png)
+
 
 ### 2.5. Add constructors and attributes to the classes
 

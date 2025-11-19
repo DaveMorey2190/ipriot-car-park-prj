@@ -92,7 +92,7 @@ After reading the task requirements, you should be able to identify the classes,
 
 | Class Name | Attributes | Methods |
 | ---------- | ---------- | ------- |
-| `CarPark`  | - total_bays<br>- available_bays<br>- parked_plates <br>- sensors <br>- display  | - add_plate <br>- remove_plate <br>- update_display <br>- load_from_config <br>- save_to_config |
+| `CarPark`  | - location <br>- available_bays<br>- parked_plates <br>- sensors <br>- display  | - add_plate <br>- remove_plate <br>- update_display <br>- load_from_config <br>- save_to_config |
 | `Sensor`   | - sensor_id <br>- is_occupied <br>- temperature | - detect_car <br>- clear_detection <br>- read_temperature() |
 | `Display`  | - message <br>- temperature <br>- announcements | - show_availability <br>- show_temperature <br>- add_announcement <br>- clear_announcements |
 
@@ -479,10 +479,10 @@ Answer the following questions:
 >      `Display, because the time is not dependant on Carpark or Sensor for its information
 >
 > 2. **What is the difference between an attribute and a property?**
->    `An attribute is an objects stored data, which does not require calculation or logic, whereas a property acts like a method disguised as an attribute; it performs some kind of calculation int he background but is accessed like it is an attribute
+>    An attribute is an objects stored data, which does not require calculation or logic, whereas a property acts like a method disguised as an attribute; it performs some kind of calculation int he background but is accessed like it is an attribute
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `An advantage of using a dictionary is that it lets us bundle different pieces of data (available bays, temperature, etc.) under clear keys, making it easy for the display to access each value by name. A disadvantage would be that the display must already know what keys to expect; if the keys change or are misspelled, the system breaks.
+>    An advantage of using a dictionary is that it lets us bundle different pieces of data (available bays, temperature, etc.) under clear keys, making it easy for the display to access each value by name. A disadvantage would be that the display must already know what keys to expect; if the keys change or are misspelled, the system breaks.
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 

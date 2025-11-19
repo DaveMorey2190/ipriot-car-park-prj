@@ -1,2 +1,6 @@
 class Display:
-       pass 
+    def __init__(self, id, message = "", is_on = False):
+        self.id = id
+        
+    def __str__(self):
+        "Display 1: Welcome to the car park."

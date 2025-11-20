@@ -4,7 +4,9 @@ from display import Display
 class CarPark:
     def __init__(self, location, capacity, plates = None, display = None):
         self.location = location
-        self.displays = displays or []
+        self.capacity = capacity
+        self.plates = plates or []
+        self.displays = display or []
         
     def register(self, component):
         if not isinstance(component, (Sensor, Display)):
@@ -39,4 +41,5 @@ def update(self, data):
         print(f"{key}: {value}")
     
 
-    def __str__(self)
+    def __str__(self):
+        pass

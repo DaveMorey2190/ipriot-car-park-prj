@@ -3,4 +3,4 @@ class Display:
         self.id = id
         
     def __str__(self):
-        "Display 1: Welcome to the car park."
+        pass

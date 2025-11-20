@@ -722,9 +722,12 @@ if __name__ == "__main__":
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-   ```markdown
-   ![Unit tests](screenshots/unit-tests.png)
-   ```
+
+   ![Unit tests](screenshots/pytest_error2.png)
+    <BR>
+   ![Unit tests](screenshots/pytest_pass.png) 
+
+
 
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:

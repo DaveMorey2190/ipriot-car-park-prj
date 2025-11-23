@@ -29,10 +29,7 @@ class CarPark:
         return max(0,self.capacity -len(self.plates))
     
     def update_displays(self):
-        data = {
-            "available_bays": self.available_bays,
-            "temperature": 25
-        }
+        data = {"available_bays": self.available_bays,"temperature": 25}
         for display in self.displays: 
             display.update(data)
 

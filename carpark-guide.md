@@ -784,6 +784,8 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 
    <BR>
 
+   ![Unit tests](screenshots/unittest_pass2.png)
+
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.
 

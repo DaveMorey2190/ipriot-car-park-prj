@@ -1,10 +1,12 @@
+import random
 from abc import ABC, abstractmethod
 
 class Sensor(ABC):
     def __init__(self, id, is_active, car_park):
         self.id = id
         self.is_active = is_active
-    
+        self.car_park = car_park
+
     @abstractmethod
     def update_car_park(self, plate):
         pass
@@ -13,7 +15,7 @@ class Sensor(ABC):
         return 'FAKE' + format(rand.randint(0,999),"03d")
     
     def detect_vehicle(self):
-        plate = self.scan_plate()
+        plate = self._scan_plate()
         self.update_car_park(plate)
     
     def __str__(self):

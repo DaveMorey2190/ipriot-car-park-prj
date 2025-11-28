@@ -19,14 +19,16 @@ class CarPark:
             self.sensors.append(component)
         elif isinstance(component, Display):
             self.displays.append(component)
-            
+    
     def add_car(self, plate):
         self.plates.append(plate)
         self.update_displays()
+        self._log_car_activity(plate, "entered")
     
     def remove_car(self, plate):
         self.plates.remove(plate)
         self.update_displays()
+        self._log_car_activity(plate, "exited")
         
     @property
     def available_bays(self):
@@ -44,11 +46,7 @@ class CarPark:
     # def _log_car_activity(self, plate, action):
     #     with self.log_file.open("a") as f:
     #         f.write(f"{plate} {action} at {datetime.now()}\n")        
-            
-    def add_car(self, plate):
-        self.plates.append(plate)
-        self.update_displays()
-        self._log_car_activity(plate, "entered")
+        
 
     def __str__(self):
         pass

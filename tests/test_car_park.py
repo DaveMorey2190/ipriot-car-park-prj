@@ -68,9 +68,9 @@ class TestCarPark(unittest.TestCase):
          self.car_park.remove_car("NEW-001")
          with self.car_park.log_file.open() as f:
             last_line = f.readlines()[-1]
-         self.assertIn(last_line, "NEW-001") # check plate entered
-         self.assertIn(last_line, "exited") # check description
-         self.assertIn(last_line, "\n") # check entry has a new line
+         self.assertIn("NEW-001", last_line) # check plate entered
+         self.assertIn("exited", last_line, ) # check description
+         self.assertIn("\n", last_line,) # check entry has a new line
 
 if __name__ == "__main__":
    unittest.main()

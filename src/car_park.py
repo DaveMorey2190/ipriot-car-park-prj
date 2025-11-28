@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import datetime # we'll use this to timestamp entries
 
 class CarPark:
-    def __init__(self, location, capacity, plates=None, sensors=None, display=None, log_file=Path("log.txt")):
+    def __init__(self, location, capacity, plates=None, sensors=None, display=None, log_file=Path("log.txt"), config_file=Path("config.json")):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
@@ -49,7 +49,7 @@ class CarPark:
     #         f.write(f"{plate} {action} at {datetime.now()}\n")        
     
     def write_config(self):
-        with open("config.json", "w") as f: # TODO: use self.config_file; use Path; add optional parm to __init__
+        with self.config_file.open("w") as f: 
             json.dump({"location": self.location,
                         "capacity": self.capacity,
                         "log_file": str(self.log_file)}, f)

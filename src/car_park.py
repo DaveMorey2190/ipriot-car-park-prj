@@ -12,6 +12,9 @@ class CarPark:
         self.displays = display or []
         self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
         self.log_file.touch(exist_ok=True)
+        self.config_file = Path(config_file)   
+        self.write_config()
+        self.sensors                    
         
     def register(self, component):
         if not isinstance(component, (Sensor, Display)):

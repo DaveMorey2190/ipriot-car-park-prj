@@ -784,6 +784,8 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 
    <BR>
 
+   ![Unit tests](screenshots/unittest_pass2.png)
+
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.
 
@@ -801,7 +803,7 @@ Finally, we'll create tests for the `Sensor` class. These tests will test the `_
 
 The car park register method should accept a `Sensor` (optional) or `Display` object. It should raise a `TypeError` if the object is neither a `Sensor` nor a `Display`. Before proceeding, think about where you would test this behaviour. Should you test it in the `CarPark` unit tests or the `Display`/`Sensor` unit tests? Why?
 
-> Answer here...
+> CarPark, because that is where the register method is.
 
 Create a new unit test in the `test_car_park.py` file called `test_register_raises_type_error`. This test should create a `CarPark` object and a `str` object. It should then call the `register` method on the `CarPark` object with the `str` object as a parameter. The test should assert that a `TypeError` is raised. Here is a sample implementation:
 
@@ -1049,9 +1051,12 @@ We are going to do the latter:
 **Additional evidencing:**
 After you have merged your branch to main, push to your remote with the s10 tag. Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+
+![Added methods to the car park class](screenshots/json_configs.png)
+
+<BR>
+
+![Added methods to the car park class](screenshots/json_configs_in_carpark.png)
 
 ### 2.14. Final step: build a car park
 
@@ -1091,9 +1096,9 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-   ```markdown
-   ![Main.py output](screenshots/main-py.png)
-   ```
+
+   ![Main.py output](screenshots/main_py.png)
+
 
 > Required for evidencing competency:
 

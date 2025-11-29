@@ -8,6 +8,12 @@ class Display:
     def update(self, data):
         for key, value in data.items():
             print(f"{key}: {value}")    
+            if key == "message":
+                self.message = value
+            elif key == "is_on":
+                self.is_on = value
+            else:
+                self.data_values[key] = value
             
     def __str__(self):
-        return f"Display {self.id}: {self.message}
+        pass

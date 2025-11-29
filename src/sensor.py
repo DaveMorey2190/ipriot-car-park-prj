@@ -12,9 +12,9 @@ class Sensor(ABC):
         pass
 
     def _scan_plate(self):
-        return 'FAKE' + format(rand.randint(0,999),"03d")
+        return 'FAKE' + format(random.randint(0,999),"03d")
     
-    def detect_vehicle(self):
+    def detect_vehicle(self,plate = None):
         plate = self._scan_plate()
         self.update_car_park(plate)
     

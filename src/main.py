@@ -4,17 +4,26 @@ from display import Display
 from pathlib import Path
 
 def main():
-    CarPark(location = "Moondalup", capacity=100, log_file="moondalup.txt", config_file=Path("moondalup_config.json"))
-    car_park = CarPark.from_config(Path("moondalup_config.json"))
-    # TODO: Reinitialize the car park object from the "moondalup_config.json" file
-    # TODO: create an entry sensor object with id 1, is_active True, and car_park car_park
-    # TODO: create an exit sensor object with id 2, is_active True, and car_park car_park
-    # TODO: create a display object with id 1, message "Welcome to Moondalup", is_on True, and car_park car_park
-    # TODO: drive 10 cars into the car park (must be triggered via the sensor - NOT by calling car_park.add_car directly)
-    # TODO: drive 2 cars out of the car park (must be triggered via the sensor - NOT by calling car_park.remove_car directly)
+    # Create and save config
+    moondalup_car_park = CarPark(location="Moondalup", capacity=100, log_file="moondalup.txt")
     
-    
-    pass
+    moondalup_car_park.config_file = Path("moondalup_config.json")
+    moondalup_car_park.write_config()
+    moondalup_car_park = CarPark.from_config(Path("moondalup_config.json"))
+
+    entry_sensor = EntrySensor(id=1, is_active=True, car_park=moondalup_car_park)
+    exit_sensor = ExitSensor(id=2, is_active=True, car_park=moondalup_car_park)
+
+    display = Display(id=1, message="Welcome to Moondalup", is_on=True, car_park=moondalup_car_park)
+
+    for car_count in range(10):
+        plate = f"CAR-{car_count:03d}"
+        entry_sensor.detect_vehicle(plate)
+
+    for car_count in range(2):
+        plate = f"CAR{car_count:03d}"
+        exit_sensor.detect_vehicle(plate)
+
 
 if __name__ == "__main__":
     main()

@@ -54,7 +54,7 @@ class TestCarPark(unittest.TestCase):
          Path("new_log.txt").unlink(missing_ok=True)
       
       def test_car_logged_when_entering(self):
-         new_carpark = CarPark("123 Example Street", 100, log_file = "new_log.txt") # TODO: change this to use a class attribute or new instance variable
+         new_carpark = CarPark("123 Example Street", 100, log_file = "new_log.txt") 
          self.car_park.add_car("NEW-001")
          with self.car_park.log_file.open() as f:
             last_line = f.readlines()[-1]
@@ -63,7 +63,7 @@ class TestCarPark(unittest.TestCase):
          self.assertIn("\n", last_line) # check entry has a new line
 
       def test_car_logged_when_exiting(self):
-         new_carpark = CarPark("123 Example Street", 100, log_file = "new_log.txt") # TODO: change this to use a class attribute or new instance variable
+         new_carpark = CarPark("123 Example Street", 100, log_file = "new_log.txt") 
          self.car_park.add_car("NEW-001")
          self.car_park.remove_car("NEW-001")
          with self.car_park.log_file.open() as f:

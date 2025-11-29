@@ -8,13 +8,10 @@ class CarPark:
     def __init__(self, location, capacity, plates=None, sensors=None, display=None, log_file=Path("log.txt"), config_file=Path("config.json")):
         self.location = location
         self.capacity = capacity
-        self.plates = plates or []
+        self.plates = plates or []  
         self.displays = display or []
         self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
-        self.log_file.touch(exist_ok=True)
-        self.config_file = Path(config_file)   
-        self.write_config()
-        self.sensors                    
+        self.log_file.touch(exist_ok=True) 
         
     def register(self, component):
         if not isinstance(component, (Sensor, Display)):

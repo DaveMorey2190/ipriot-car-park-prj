@@ -5,6 +5,43 @@ from pathlib import Path
 from datetime import datetime # we'll use this to timestamp entries
 
 class CarPark:
+    """
+    Manages a car park's capacity, vehicle tracking, connected sensors, and display units.
+
+    The class stores licence plates currently inside the car park, updates display boards
+    with live information, logs vehicle activity to a file, and supports saving/loading
+    configuration data.
+
+    Arguments
+    ---------
+    location : str
+        Name or identifier of the car park.
+    capacity : int
+        Maximum number of vehicles the car park can hold.
+    plates : list[str], optional
+        Existing plates currently inside the car park. Defaults to an empty list.
+    sensors : list[Sensor], optional
+        Sensors connected to the car park. Defaults to an empty list.
+    display : list[Display], optional
+        Display units assigned to the car park. Defaults to an empty list.
+    log_file : Path or str, optional
+        Path to the log file used for recording vehicle activity.
+    config_file : Path or str, optional
+        Path to the configuration file used for saving car park metadata.
+
+    Returns
+    -------
+    CarPark
+        A fully initialised CarPark instance that can track vehicles and interact
+        with connected sensors and display devices.
+
+    Examples
+    --------
+    >>> moondalup_carpark = CarPark("Moondalup", 100)
+    >>> moondalup_carpark.add_car("CAR-001")
+    >>> moondalup_carpark.available_bays
+    99
+    """
     def __init__(self, location, capacity, plates=None, sensors=None, display=None, log_file=Path("log.txt"), config_file=Path("config.json")):
         self.location = location
         self.capacity = capacity

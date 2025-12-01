@@ -4,7 +4,6 @@ from display import Display
 from pathlib import Path
 
 def main():
-    # Create and save config
     moondalup_car_park = CarPark(location="Moondalup", capacity=100, log_file="moondalup.txt")
     
     moondalup_car_park.config_file = Path("moondalup_config.json")
